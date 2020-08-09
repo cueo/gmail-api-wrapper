@@ -26,7 +26,7 @@ TRANSACTION_SENDERS = [
     'noreply-cashier@qmailer.zerodha.net',
     'no-reply@amazon.com',
     'info@bseindia.in',
-    ' CRA@nsdl.co.in',
+    'CRA@nsdl.co.in',
     'cra-alerts@nsdl.co.in',
     'order-update@amazon.in'
 ]

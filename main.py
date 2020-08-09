@@ -13,11 +13,14 @@ if __name__ == '__main__':
     service = authorize(SCOPES)
 
     label = Label(service)
-    label.create_label('Transactions')
+    label_name = 'Transactions'
+    label.create_label(label_name)
     pprint(label.all_labels())
 
     _filter = Filter(service)
-    new_filter = _filter.create_filter(remove_labels=['INBOX'], add_labels=['Transactions'], senders=TRANSACTION_SENDERS)
+    new_filter = _filter.create_filter(remove_labels=['INBOX'], add_labels=[label_name], senders=TRANSACTION_SENDERS)
     pprint(_filter.all_filters())
     _filter.delete_filter(new_filter['id'])
     pprint(_filter.all_filters(cached=False))
+
+    label.delete_label(label_name)

@@ -33,3 +33,9 @@ class Label:
             return label
         except errors.HttpError as error:
             print('An error occurred: %s' % error)
+
+    def delete_label(self, name):
+        return self.delete_label(self.get_label_id(name))
+
+    def _delete_label(self, label_id):
+        return self.service.users().labels().delete(userId='me', id=label_id).execute()

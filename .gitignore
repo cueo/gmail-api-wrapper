@@ -1,0 +1,12 @@
+# Python
+__pycache__
+
+# PyCharm
+.idea
+
+# Project
+credentials.json
+token.pickle
+
+# MacOS
+.DS_Store

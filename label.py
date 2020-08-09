@@ -6,8 +6,8 @@ class Label:
         self.service = service
         self.labels = None
 
-    def all_labels(self):
-        if self.labels is None:
+    def all_labels(self, cached=True):
+        if not cached or self.labels is None:
             self.labels = self.service.users().labels().list(userId='me').execute()['labels']
         return self.labels
 
